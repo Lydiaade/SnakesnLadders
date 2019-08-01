@@ -6,7 +6,7 @@ This is a solution from codewars challenge ['Snakes and Ladders'] (https://www.c
 * Python 3.4.3
 
 # Running the tests:
-`python -m unittest test`
+`python3 -m unittest test`
 
 # Instructions
 Snakes and Ladders is an ancient Indian board game regarded today as a worldwide classic. It is played between two or more players on a gameboard having numbered, gridded squares. A number of "ladders" and "snakes" are pictured on the board, each connecting two specific board squares. (Source Wikipedia)
