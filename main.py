@@ -3,9 +3,12 @@ class SnakesLadders():
         self.players = int(input("How many players? "))
         i = 1
         self.player_score = {}
+        self.player_names = {}
         while i <= self.players:
             self.player_score.update({i:0})
+            self.player_names.update({i: input("Player %i name? " % i)})
             print(self.player_score)
+            print(self.player_names)
             i += 1
         self.whose_turn = 1
 
@@ -35,9 +38,9 @@ class SnakesLadders():
 
     def number_of_points(self, current_player):
         if self.player_score[current_player] < 100:
-            return 'Player {number} is on square {score}'.format(number=current_player, score=self.player_score[current_player])
+            return 'Player {number}, {name} is on square {score}'.format(number=current_player, name=self.player_names[current_player], score=self.player_score[current_player])
         elif self.player_score[current_player] == 100:
-            return 'Player %d Wins!' % current_player
+            return 'Player {number}, {name} Wins!'.format(number=current_player, name=self.player_names[current_player])
 
 
     def play(self, die1, die2):
