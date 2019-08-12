@@ -1,16 +1,20 @@
 class SnakesLadders():
     def __init__(self):
-        self.player_score = {1:0, 2:0}
-        self.p1score = 0
-        self.p2score = 0
+        self.players = int(input("How many players? "))
+        i = 1
+        self.player_score = {}
+        while i <= self.players:
+            self.player_score.update({i:0})
+            print(self.player_score)
+            i += 1
         self.whose_turn = 1
 
     def assign_next_turn(self, die1, die2):
         if die1 == die2:
             return
         else:
-            if self.whose_turn == 1:
-                self.whose_turn = 2
+            if self.whose_turn < self.players:
+                self.whose_turn += 1
             else:
                 self.whose_turn = 1
 
@@ -37,7 +41,7 @@ class SnakesLadders():
 
 
     def play(self, die1, die2):
-        if self.player_score[1] == 100 or self.player_score[2] == 100:
+        if 100 in self.player_score.values():
             return 'Game over!'
         else:
             self.player_score[self.whose_turn] = self.rescore1(die1,die2)
