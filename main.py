@@ -20,9 +20,14 @@ class SnakesLadders():
                 self.whose_turn = 1
 
     def position(self, current):
-        snakesnladders = {2:38, 7:14, 8:31, 15:26, 16:6, 21:42, 28:84, 36:44, 46:25, 49:11, 51:67, 62:19, 64:60, 71:91, 74:53, 78:98, 87:94, 89:68, 92:88, 95:75, 99:80}
-        if current in snakesnladders.keys():
-            return snakesnladders[current]
+        snakes = {16:6, 46:25, 49:11, 62:19, 64:60, 74:53, 89:68, 92:88, 95:75, 99:80}
+        ladders = {2:38, 7:14, 8:31, 15:26, 21:42, 28:84, 36:44, 51:67, 71:91, 78:98, 87:94}
+        if current in snakes.keys():
+            print("Whoops, you seemed to have slipped on snake! Down you go!!")
+            return snakes[current]
+        elif current in ladders.keys(): 
+            print("Yay! You've got a booster up a ladder!! Up, Up and Away!!")
+            return ladders[current]
         else:
             return current
 
