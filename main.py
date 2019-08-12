@@ -31,7 +31,7 @@ class SnakesLadders():
         else:
             return current
 
-    def rescore1(self, die1, die2):
+    def rescore(self, die1, die2):
         score = 0
         score = self.player_score[self.whose_turn] + die1 + die2
         if score > 100:
@@ -50,7 +50,7 @@ class SnakesLadders():
         if 100 in self.player_score.values():
             return 'Game over!'
         else:
-            self.player_score[self.whose_turn] = self.rescore1(die1,die2)
+            self.player_score[self.whose_turn] = self.rescore(die1,die2)
             x = self.number_of_points(self.whose_turn)
             self.assign_next_turn(die1, die2)
             return x
