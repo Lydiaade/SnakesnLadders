@@ -1,4 +1,4 @@
-import unittest,random
+import unittest
 
 from main import SnakesLadders
 
